@@ -121,26 +121,6 @@ const unsigned char* label_lookup(const unsigned char* key, const void* cache_pt
     return NULL;
 }
 
-struct label_cache_entry {
-    unsigned char label[33];
-    unsigned char label_tweak[32];
-};
-struct labels_cache {
-    size_t entries_used;
-    struct label_cache_entry entries[10];
-};
-struct labels_cache labels_cache;
-const unsigned char* label_lookup(const unsigned char* key, const void* cache_ptr) {
-    const struct labels_cache* cache = (const struct labels_cache*)cache_ptr;
-    size_t i;
-    for (i = 0; i < cache->entries_used; i++) {
-        if (secp256k1_memcmp_var(cache->entries[i].label, key, 33) == 0) {
-            return cache->entries[i].label_tweak;
-        }
-    }
-    return NULL;
-}
-
 static void test_recipient_sort_helper(unsigned char (*sp_addresses[3])[2][33], unsigned char (*sp_outputs[3])[32]) {
     unsigned char const *seckey_ptrs[1];
     secp256k1_silentpayments_recipient recipients[3];
