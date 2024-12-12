@@ -6,9 +6,9 @@
 #ifndef SECP256K1_MODULE_SILENTPAYMENTS_TESTS_H
 #define SECP256K1_MODULE_SILENTPAYMENTS_TESTS_H
 
+#include "../../../include/secp256k1.h"
 #include "../../../include/secp256k1_silentpayments.h"
 #include "../../../src/modules/silentpayments/vectors.h"
-#include "include/secp256k1.h"
 
 /** Constants
  *
