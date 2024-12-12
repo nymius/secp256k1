@@ -6,13 +6,14 @@
  * EXAMPLES_COPYING or https://creativecommons.org/publicdomain/zero/1.0 *
  *************************************************************************/
 
-#include <stdio.h>
 #include <assert.h>
+#include <stdio.h>
 #include <string.h>
 
 #include <secp256k1_extrakeys.h>
 #include <secp256k1_silentpayments.h>
 
+#include "../src/util.h"
 #include "examples_util.h"
 
 /* Static data for Bob and Carol's silent payment addresses */
